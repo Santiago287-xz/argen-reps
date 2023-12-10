@@ -7,16 +7,23 @@ import { Navbar } from "@/components/navbar";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 
+import { Oswald } from 'next/font/google'
+
+const oswald = Oswald({
+	subsets: ['latin'],
+	display: 'swap',
+  })
+
 export const metadata: Metadata = {
 	title: {
 		default: siteConfig.name,
 		template: `%s - ${siteConfig.name}`,
 	},
 	description: siteConfig.description,
-	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "white" },
-		{ media: "(prefers-color-scheme: dark)", color: "black" },
-	],
+	// themeColor: [
+	// 	{ media: "(prefers-color-scheme: light)", color: "white" },
+	// 	{ media: "(prefers-color-scheme: dark)", color: "black" },
+	// ],
 	icons: {
 		icon: "/favicon.ico",
 		shortcut: "/favicon-16x16.png",
@@ -41,7 +48,7 @@ export default function RootLayout({
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 					<div className="relative flex flex-col h-screen">
 						<Navbar />
-						<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+						<main className={oswald.className}>
 							{children}
 						</main>
 						<footer className="w-full flex items-center justify-center py-3">
