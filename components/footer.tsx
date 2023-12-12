@@ -1,10 +1,10 @@
 import { Link } from "@nextui-org/link";
-import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { TwitterIcon } from "./icons";
 import { DiscordIcon } from "./icons";
 
 import { Oswald } from "next/font/google";
+import { useState } from "react";
 
 const oswald = Oswald({
   subsets: ["latin"],

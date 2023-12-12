@@ -21,7 +21,7 @@ export default function ProductCard({ data }: { data: Data }) {
         <h3 className="text-4xl font-normal">{data.description}</h3>
       </div>
       <Link
-        className="relative mt-8 bg-foreground/10 rounded-2xl sm:w-[19rem] w-full"
+        className="relative mt-8 bg-foreground/10 rounded-2xl sm:w-[19rem] h-64 sm:h-72 w-full justify-center"
         href={data.link}
       >
         <b
@@ -31,9 +31,10 @@ export default function ProductCard({ data }: { data: Data }) {
           <span>¥{data.price}</span>
         </b>
         <Image
+        removeWrapper
           alt={data.name}
           src={data.image_url}
-          className="z-0 h-4/5 object-cover hover:scale-105"
+          className="z-0 h-full w-full object-cover"
         />
       </Link>
     </div>
