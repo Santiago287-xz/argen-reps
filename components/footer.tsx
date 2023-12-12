@@ -39,21 +39,18 @@ export default function Footer() {
             <TwitterIcon className="w-8 h-8 text-white" />
           </Link>
         </div>
-        <h2 className="text-5xl font-normal">ARGEN REPS</h2>
-      </div>
-      <div className="flex justify-between w-full px-16">
         <div className={oswald.className}>
-          <span className="text-gray-400">
-            Copyright © 2023-2024 Argen Reps
-          </span>
+          <h2 className="text-3xl md:text-5xl font-normal">ARGEN REPS</h2>
         </div>
-
+      </div>
+      <div className="flex flex-wrap justify-center md:justify-between w-full px-16">
+        <span className="text-gray-400 px-2">Copyright © 2023-2024 Argen Reps</span>
         <Link
           isExternal
           href={siteConfig.links.webcodebuilders}
           className="flex items-center gap-1 text-current"
         >
-          <span className="text-zinc-200">Powered by</span>
+          <span className="text-zinc-200 pl-2">Powered by</span>
           <p className="text-primary">WebCodeBuilders</p>
         </Link>
       </div>

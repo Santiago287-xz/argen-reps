@@ -5,7 +5,7 @@ import { Tabs, Tab, Card, CardBody, CardHeader } from "@nextui-org/react";
 
 export default function App() {
   return (
-    <div className="flex w-full px-8 md:max-w-6xl max-w-3xl m-auto flex-col" id="shopping-guide">
+    <div className="flex w-full px-8 mb-8 md:max-w-6xl max-w-3xl m-auto flex-col" id="shopping-guide">
       <h2 className="text-3xl md:text-5xl text-center mb-12">GUIA DE COMPRA</h2>
       <Tabs aria-label="Options">
         <Tab key="introduction" title="Introducción">

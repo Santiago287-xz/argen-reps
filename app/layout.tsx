@@ -20,10 +20,6 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  // themeColor: [
-  // 	{ media: "(prefers-color-scheme: light)", color: "white" },
-  // 	{ media: "(prefers-color-scheme: dark)", color: "black" },
-  // ],
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -41,12 +37,12 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen font-sans antialiased bg-[#efefef] dark:bg-neutral-950",
           fontSans.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
+          <div className="relative flex flex-col h-screen justify-between">
             <Navbar />
             <main className={oswald.className}>{children}</main>
             <Footer />
