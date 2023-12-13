@@ -17,68 +17,6 @@ export const siteConfig = {
     title_homepage:
       "https://media.discordapp.net/attachments/1019381524149305426/1183513810917666966/InicioArgenm.png?ex=65889c21&is=65762721&hm=162f6b70d9b87b9f8e1d8e35c664d44c51357c2f2b04d34faf130211bbc412ae&=&format=webp&quality=lossless",
   },
-  galery_products: [
-    {
-      id: 1,
-      product_link: "https://youtu.be/h9AHQV3pPn8?si=SpBLgd0IjoDDLf5i",
-      span: "MOUSEPAD RED",
-      h4: "prueba de texto",
-      grid: "sm:col-span-4",
-      fotter: null,
-      image: "https://nextui.org/images/card-example-4.jpeg",
-      style_footer: {
-        color: "border-zinc-100/50 bg-white/30 text-black", // Claro
-      },
-    },
-    {
-      id: 2,
-      product_link: "https://youtu.be/h9AHQV3pPn8?si=SpBLgd0IjoDDLf5i",
-      span: "MOUSEPAD BLUE",
-      h4: "prueba de texto",
-      grid: "sm:col-span-4",
-      fotter: null,
-      image: "https://nextui.org/images/card-example-3.jpeg",
-      style_footer: {
-        color: "border-zinc-100/50 bg-white/30 text-black", // Claro
-      },
-    },
-    {
-      id: 3,
-      product_link: "https://youtu.be/h9AHQV3pPn8?si=SpBLgd0IjoDDLf5i",
-      span: "MOUSEPAD BLACK",
-      h4: "prueba de texto",
-      grid: "sm:col-span-4",
-      fotter: null,
-      image: "https://nextui.org/images/card-example-2.jpeg",
-      style_footer: {
-        color: "border-zinc-100/50 bg-white/30 text-black", // Claro
-      },
-    },
-    {
-      id: 4,
-      product_link: "https://youtu.be/h9AHQV3pPn8?si=SpBLgd0IjoDDLf5i",
-      span: "prueba de texto",
-      h4: "prueba de texto",
-      grid: "sm:col-span-5",
-      fotter: null,
-      image: "https://nextui.org/images/card-example-6.jpeg",
-      style_footer: {
-        color: "bg-black/40 border-default-600 dark:border-default-100 text-white", // Oscuro
-      },
-    },
-    {
-      id: 5,
-      product_link: "https://youtu.be/h9AHQV3pPn8?si=SpBLgd0IjoDDLf5i",
-      span: "prueba de texto",
-      h4: "prueba de texto",
-      grid: "sm:col-span-7",
-      fotter: null,
-      image: "https://nextui.org/images/card-example-5.jpeg",
-      style_footer: {
-        color: "bg-black/40 border-default-600 dark:border-default-100 text-white", // Oscuro
-      },
-    },
-  ],
   catalog_options: [
     "Zapas",
     "Gato",
