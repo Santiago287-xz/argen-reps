@@ -14,6 +14,25 @@ import { ChevronDownIcon } from "./icons";
 export default function CatalogProduct() {
   const [statusFilter, setStatusFilter]: any = useState("all");
 
+  const [visibleCount, setVisibleCount] = useState(12);
+  const [loading, setLoading] = useState(false);
+
+  const productsToDisplay = siteConfig.products
+    .filter(
+      (product) =>
+        statusFilter == "all" ||
+        statusFilter.size === 3 ||
+        statusFilter.has(product.type)
+    )
+    .slice(0, visibleCount);
+
+  const handleLoadMore = async () => {
+    setLoading(true);
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    setVisibleCount((prevCount) => prevCount + 12);
+    setLoading(false);
+  };
+
   return (
     <section className="w-full m-auto py-12 bg-[#efefef] dark:bg-black">
       <div className="flex flex-wrap gap-4  sm:justify-around  justify-center items-center mb-8">
@@ -44,16 +63,16 @@ export default function CatalogProduct() {
         </Dropdown>
       </div>
       <div className="flex flex-wrap flex-row content-center justify-center max-w-7xl m-auto">
-        {siteConfig.products
-          .filter(
-            (product) =>
-              statusFilter === "all" ||
-              statusFilter.size === 3 ||
-              statusFilter.has(product.type)
-          )
-          .map((product) => (
-            <ProductCard key={product.id} data={product} />
-          ))}
+        {productsToDisplay.map((product) => (
+          <ProductCard key={product.id} data={product} />
+        ))}
+      </div>
+      <div className="flex flex-col w-full pt-8">
+        {visibleCount < siteConfig.products.length && (
+          <Button onClick={handleLoadMore} className="m-auto">
+            {loading ? "Cargando..." : "Mostrar más productos"}
+          </Button>
+        )}
       </div>
     </section>
   );

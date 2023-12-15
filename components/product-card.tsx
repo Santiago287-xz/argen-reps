@@ -31,7 +31,7 @@ export default function ProductCard({ data }: { data: Data }) {
           <span>¥{data.price}</span>
         </b>
         <Image
-        removeWrapper
+          removeWrapper
           alt={data.name}
           src={data.image_url}
           className="z-0 h-full w-full object-cover"
