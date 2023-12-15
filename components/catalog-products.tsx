@@ -7,36 +7,45 @@ import {
   DropdownTrigger,
   DropdownMenu,
   Button,
+  Input,
 } from "@nextui-org/react";
 import { useState } from "react";
 import { ChevronDownIcon } from "./icons";
 
 export default function CatalogProduct() {
+  const productShowNum = 9;
   const [statusFilter, setStatusFilter]: any = useState("all");
-
-  const [visibleCount, setVisibleCount] = useState(12);
-  const [loading, setLoading] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(productShowNum);
+  const [inputValue, setInputValue] = useState("");
 
   const productsToDisplay = siteConfig.products
     .filter(
       (product) =>
-        statusFilter == "all" ||
-        statusFilter.size === 3 ||
-        statusFilter.has(product.type)
+        (statusFilter == "all" ||
+          statusFilter.size === 3 ||
+          statusFilter.has(product.type)) &&
+        product.description.toLowerCase().includes(inputValue.toLowerCase())
     )
     .slice(0, visibleCount);
 
-  const handleLoadMore = async () => {
-    setLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    setVisibleCount((prevCount) => prevCount + 12);
-    setLoading(false);
-  };
+  const handleLoadMore = () =>
+    setVisibleCount((prevCount) => prevCount + productShowNum);
 
+  const handleChange = (e: any) => {
+    const newValue = e.target.value;
+    setInputValue(newValue);
+    console.log(newValue);
+  };
   return (
     <section className="w-full m-auto py-12 bg-[#efefef] dark:bg-black">
-      <div className="flex flex-wrap gap-4  sm:justify-around  justify-center items-center mb-8">
-        <h2 className="text-5xl text-center">PRODUCTOS</h2>
+      <div className="flex flex-wrap gap-4 sm:justify-around justify-center items-center mb-8 mx-auto max-w-[80rem]">
+        <h2 className="text-5xl text-center w-full md:w-auto">PRODUCTOS</h2>
+        <Input
+          className="w-1/3"
+          label="Buscar..."
+          value={inputValue}
+          onChange={handleChange}
+        />
         <Dropdown>
           <DropdownTrigger className="flex">
             <Button
@@ -70,7 +79,7 @@ export default function CatalogProduct() {
       <div className="flex flex-col w-full pt-8">
         {visibleCount < siteConfig.products.length && (
           <Button onClick={handleLoadMore} className="m-auto">
-            {loading ? "Cargando..." : "Mostrar más productos"}
+            Mostrar más productos
           </Button>
         )}
       </div>
